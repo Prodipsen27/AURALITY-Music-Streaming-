@@ -32,7 +32,7 @@ export const shazamCoreApi = createApi({
       query: (id) => `/artists/?ids=${id}`,
     }),
     getArtistSongDetails: builder.query({
-      query: (id) => ` /artist_singles/?id=${id}&offset=0&limit=5`,
+      query: (id) => ` /artist_singles/?id=${id}&offset=0&limit=10`,
     }),
     getSongRelated: builder.query({
       query: ({ songid}) => `/recommendations/?limit=10&seed_tracks=${songid}&seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical`,
@@ -42,7 +42,7 @@ export const shazamCoreApi = createApi({
     }),
     getGenre: builder.query({ query: (genre) => `/recommendations/?limit=50&seed_genres=${genre.toLowerCase()}`,
     }),
-    getSearch: builder.query({ query: (searchTerm) => `/search/?q=${searchTerm}&type=multi&offset=0&limit=10&numberOfTopResults=2`,
+    getSearch: builder.query({ query: (searchTerm) => `/search/?q=${searchTerm}&type=multi&offset=0&limit=20&numberOfTopResults=2`,
     }),
   }),
 });
