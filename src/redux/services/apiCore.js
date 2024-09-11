@@ -7,7 +7,7 @@ export const apiCoreApi = createApi({
     baseUrl: 'https://spotify23.p.rapidapi.com', // Base URL for the API
     prepareHeaders: (headers) => {
       // Set required headers, including the API key
-      headers.set('x-rapidapi-key', '46e5a6b812msh3c92a6747b63cf9p1d1e0ajsncf21310ff06d');
+      headers.set('x-rapidapi-key', 'API_KEY');
       return headers;
     },
   }),
