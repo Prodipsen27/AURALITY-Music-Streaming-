@@ -3,19 +3,18 @@ import { Error, Loader, ArtistCard } from '../components';
 import { useGetTop100Query } from '../redux/services/shazamCore';
 
 const TopArtists = () => {
-
   const { data, isFetching, error } = useGetTop100Query();
   const tracks = data?.tracks;
 
   // Function to shuffle the tracks array without mutating the original array
-//   const shuffleArray = (array) =>
-//     // Make a shallow copy of the array using slice before shuffling
-//     array?.slice().sort(() => Math.random() - 0.5)
-//   // eslint-disable-next-line semi-style
-//   ;
+  //   const shuffleArray = (array) =>
+  //     // Make a shallow copy of the array using slice before shuffling
+  //     array?.slice().sort(() => Math.random() - 0.5)
+  //   // eslint-disable-next-line semi-style
+  //   ;
 
   // Shuffle the tracks before rendering
-//   const shuffledTracks = shuffleArray(tracks);
+  //   const shuffledTracks = shuffleArray(tracks);
 
   if (isFetching) return <Loader title="Loading top 100" />;
 
@@ -27,12 +26,12 @@ const TopArtists = () => {
 
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {tracks?.map((track) => (
-            console.log(track),
+          // .log(track),
           <ArtistCard
             key={track.id}
             track={track}
             data={tracks}
-       
+
           />
         ))}
       </div>

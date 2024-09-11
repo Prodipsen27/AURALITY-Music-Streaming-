@@ -1,18 +1,17 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper';
 import PlayPause from './PlayPause';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
-import { useGetTopChartsQuery,useGetArtistDetailsQuery } from '../redux/services/shazamCore';
+import { useGetTopChartsQuery, useGetArtistDetailsQuery } from '../redux/services/shazamCore';
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import { useParams } from "react-router-dom"; 
 
 // Component for displaying a single top chart card
 const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick }) => (
- 
+
   <div className="text-white w-full flex flex-row items-center hover:bg-[#4c426e] py-2 p-4 rounded-lg cursor-pointer mb-2">
     <h3 className="font-bold text-base text-white mr-3">{i + 1}</h3> {/* Rank number */}
 
@@ -47,10 +46,9 @@ const TopPlay = () => {
   const { id } = useParams();
   const { activeSong, isPlaying } = useSelector((state) => state.player); // Access active song and play state from Redux store
   const { data } = useGetTopChartsQuery(); // Fetch top chart data from API
-  const { data:artistData } = useGetArtistDetailsQuery({id}); // Fetch top artist data from API
+  const { data: artistData } = useGetArtistDetailsQuery({ id }); // Fetch top artist data from API
   const divRef = useRef(null); // Create a reference for smooth scroll behavior
-console.log(artistData?.id);
-
+  /// ///////.log(artistData?.id);
 
   // Scroll to the top when component loads
   useEffect(() => {
@@ -118,7 +116,7 @@ console.log(artistData?.id);
           modules={[FreeMode]}
           className="mt-4"
         >
-          {topPlays?.map((song, i) => (
+          {topPlays?.map((song) => (
             <SwiperSlide
               key={song.id}
               style={{ width: '25%', height: 'auto' }}

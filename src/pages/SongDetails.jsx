@@ -21,7 +21,7 @@ const SongDetails = () => {
   const { data: trackData, isFetching: isFetchingTrackDetails, error: trackError } = useGetTrackDetailsQuery({ songid });
   const { data: relatedSongData, isFetching: isFetchingRelatedSong, error: relatedError } = useGetSongRelatedQuery({ songid });
 
-  console.log("Song detail: ", relatedSongData?.tracks);
+  // console.log('Song detail: ', relatedSongData?.tracks);
   // Function to handle when the pause button is clicked
   const handlePauseClick = () => {
     dispatch(playPause(false)); // Dispatches action to pause the song
@@ -52,7 +52,7 @@ const SongDetails = () => {
           artistId=""
           songData={songData}
           track={track}
-          // i={i}
+          i={i}
           // data={trackData?.tracks}
         />
       ))}
@@ -75,7 +75,7 @@ const SongDetails = () => {
         </h2>
       </div>
       {/* {relatedSongData?.tracks?.map((track, i) => ( */}
-        <RelatedSongs
+      <RelatedSongs
         data={relatedSongData}
         isPlaying={isPlaying}
         activeSong={activeSong}
@@ -84,7 +84,7 @@ const SongDetails = () => {
         // i={i}
       />
       {/* // ))} */}
-      
+
     </div>
   );
 };

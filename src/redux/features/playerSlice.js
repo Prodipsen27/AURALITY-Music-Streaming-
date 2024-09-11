@@ -17,12 +17,14 @@ const playerSlice = createSlice({
       // console.log("playerSlice",state.currentSongs[action.payload].data );
       state.activeSong = action.payload.song;
 
-      if (action.payload?.song?.data?.tracks?.hits) {
-        state.currentSongs = action.payload.data.tracks.hits;
-      } else if (action.payload?.data?.properties) {
-        state.currentSongs = action.payload?.data?.tracks;
+      if (action.payload?.song) {
+        state.currentSongs = action.payload?.song;
       } else {
-        state.currentSongs = action.payload.data;
+      // } else if (action.payload?.song?.data?.properties) {
+      //   state.currentSongs = action.payload?.song;
+      // } else {
+        state.currentSongs = action.payload?.song;
+        console.log( state.currentSongs);
       }
 
       state.currentIndex = action.payload.i;

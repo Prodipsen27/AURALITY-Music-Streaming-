@@ -9,16 +9,11 @@ const App = () => {
 
   return (
     <div className="relative flex">
-      {/* Sidebar with Black Background */}
       <Sidebar />
-
-      {/* Main Content Area with Black Background and Silver Text */}
       <div className="flex-1 flex flex-col bg-gradient-to-br from-gray-800 via-black to-green-900 text-yellow-500">
-        {/* Search Bar */}
         <Searchbar />
 
         <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
-          {/* Routes Section */}
           <div className="flex-1 h-fit pb-40">
             <Routes>
               <Route path="/" element={<Discover />} />
@@ -30,17 +25,14 @@ const App = () => {
               <Route path="/search/:searchTerm" element={<Search />} />
             </Routes>
           </div>
-
-          {/* TopPlay Section (Sticky on large screens) */}
           <div className="xl:sticky relative top-0 h-fit">
             <TopPlay />
           </div>
         </div>
       </div>
 
-      {/* Music Player at the Bottom */}
       {activeSong?.name && (
-        <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slowfade bg-gray-900 text-gray-200 rounded-t-3xl z-10">
+        <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-green-700/27 backdrop-blur-lg rounded-t-3xl z-10">
           <MusicPlayer />
         </div>
       )}

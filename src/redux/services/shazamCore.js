@@ -7,7 +7,7 @@ export const shazamCoreApi = createApi({
     baseUrl: 'https://spotify23.p.rapidapi.com', // Base URL for the API
     prepareHeaders: (headers) => {
       // Set required headers, including the API key
-      headers.set('x-rapidapi-key', 'ed69fa3006msh83136974e699b1cp1808f0jsneac0b4e30136');
+      headers.set('x-rapidapi-key', '46e5a6b812msh3c92a6747b63cf9p1d1e0ajsncf21310ff06d');
       return headers;
     },
   }),
@@ -22,10 +22,10 @@ export const shazamCoreApi = createApi({
 
     // Endpoint for fetching song details by song ID
     getSongDetails: builder.query({
-      query: ({ songid }) => `/${'track_lyrics'||'tracks' }/?${'id'||'ids' }=${songid}`,
+      query: ({ songid }) => `/${'track_lyrics' || 'tracks'}/?${'id' || 'ids'}=${songid}`,
     }),
     getTrackDetails: builder.query({
-      query: ({ songid }) => `/${'tracks' }/?${'ids' }=${songid}`,
+      query: ({ songid }) => `/${'tracks'}/?${'ids'}=${songid}`,
     }),
     // Endpoint for fetching artist details by artist ID
     getArtistDetails: builder.query({
@@ -35,7 +35,7 @@ export const shazamCoreApi = createApi({
       query: (id) => ` /artist_singles/?id=${id}&offset=0&limit=10`,
     }),
     getSongRelated: builder.query({
-      query: ({ songid}) => `/recommendations/?limit=10&seed_tracks=${songid}&seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical`,
+      query: ({ songid }) => `/recommendations/?limit=10&seed_tracks=${songid}&seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical`,
     }),
     getSongsByCountry: builder.query({
       query: (country) => `/recommendations/?limit=50&seed_genres=classical,${country}`,

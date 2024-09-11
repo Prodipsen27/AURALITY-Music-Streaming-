@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const ArtistCard = ({ track }) => {
   const navigate = useNavigate(); // Hook to navigate between pages
