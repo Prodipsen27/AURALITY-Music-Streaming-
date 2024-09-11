@@ -5,7 +5,7 @@ const ArtistCard = ({ track }) => {
 
   // Get the album image from the track object
   const artwork = track?.album?.images?.[0]?.url; 
-  console.log("Artist Artwork:", artwork);
+  // console.log("Artist Artwork:", artwork);
 
   return (
     <div
