@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper';
 import PlayPause from './PlayPause';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
-import { useGetTopChartsQuery, useGetArtistDetailsQuery } from '../redux/services/shazamCore';
+import { useGetTopChartsQuery, useGetArtistDetailsQuery } from '../redux/services/apiCore';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 
@@ -70,7 +70,7 @@ const TopPlay = () => {
   };
 
   return (
-    <div ref={divRef} className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[500px] max-w-full flex flex-col">
+    <div ref={divRef} className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[500px] w-[400px] max-w-full flex flex-col">
 
       {/* Top Charts Section */}
       <div className="w-full flex flex-col">

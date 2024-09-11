@@ -5,7 +5,7 @@ import { DetailsHeader, Error, Loader, RelatedSongs } from '../components'; // I
 import { setActiveSong, playPause } from '../redux/features/playerSlice'; // Redux actions
 
 // API hooks to fetch song and artist details
-import { useGetSongDetailsQuery, useGetTrackDetailsQuery, useGetSongRelatedQuery } from '../redux/services/shazamCore';
+import { useGetSongDetailsQuery, useGetTrackDetailsQuery, useGetSongRelatedQuery } from '../redux/services/apiCore';
 
 const SongDetails = () => {
   const dispatch = useDispatch();

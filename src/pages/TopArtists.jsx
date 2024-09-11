@@ -1,6 +1,6 @@
 
 import { Error, Loader, ArtistCard } from '../components';
-import { useGetTop100Query } from '../redux/services/shazamCore';
+import { useGetTop100Query } from '../redux/services/apiCore';
 
 const TopArtists = () => {
   const { data, isFetching, error } = useGetTop100Query();

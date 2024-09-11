@@ -1,11 +1,11 @@
 import SongBar from './SongBar';
 
-const RelatedSongs = ({ data, isPlaying, activeSong, artistId, handlePauseClick, handlePlayClick }) => {
-  // Get tracks from the data
-  const tracks = data;
-  console.log("Songbar", tracks);
+const RelatedSongs = ({ data, isPlaying, activeSong, artistId, handlePauseClick, handlePlayClick }) =>
+// Get tracks from the data
+// const tracks = data;
+// console.log("Songbar", tracks);
 
-  return (
+  (
     <div className="flex flex-col">
       <h1 className="font-bold text-3xl text-white">
         Related Songs:
@@ -28,6 +28,4 @@ const RelatedSongs = ({ data, isPlaying, activeSong, artistId, handlePauseClick,
       </div>
     </div>
   );
-};
-
 export default RelatedSongs;

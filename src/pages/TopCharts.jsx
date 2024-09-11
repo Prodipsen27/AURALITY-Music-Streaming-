@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'; // Import necessary hooks
 import { useSelector } from 'react-redux';
 import { Error, Loader, SongCard } from '../components';
-import { useGetTop100Query } from '../redux/services/shazamCore';
+import { useGetTop100Query } from '../redux/services/apiCore';
 
 const TopCharts = () => {
   const { activeSong, isPlaying } = useSelector((state) => state.player);

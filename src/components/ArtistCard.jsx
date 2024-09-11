@@ -4,7 +4,7 @@ const ArtistCard = ({ track }) => {
   const navigate = useNavigate(); // Hook to navigate between pages
 
   // Get the album image from the track object
-  const artwork = track?.album?.images?.[0]?.url; 
+  const artwork = track?.album?.images?.[0]?.url;
   // console.log("Artist Artwork:", artwork);
 
   return (

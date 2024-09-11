@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Error, Loader, SongCard } from '../components';
 import { genres } from '../assets/constants'; // Importing genres array from constants
-import { useGetGenreQuery } from '../redux/services/shazamCore'; // Query hook for top charts
+import { useGetGenreQuery } from '../redux/services/apiCore'; // Query hook for top charts
 import { selectGenreListId } from '../redux/features/playerSlice';
 
 const Discover = () => {

@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // Create the API slice
-export const shazamCoreApi = createApi({
+export const apiCoreApi = createApi({
   reducerPath: 'shazamCoreApi', // Unique key for this slice of the state in the store
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://spotify23.p.rapidapi.com', // Base URL for the API
@@ -59,4 +59,4 @@ export const {
   useGetTop100Query,
   useGetGenreQuery,
   useGetSearchQuery,
-} = shazamCoreApi;
+} = apiCoreApi;
